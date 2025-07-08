@@ -1,3 +1,4 @@
+import 'ai_interview_logic_page.dart';
 import 'ai_interview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -51,7 +52,8 @@ ElevatedButton(
   onPressed: () {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const AIInterviewPage()),
+     MaterialPageRoute(builder: (context) => const AIInterviewLogicPage()),
+
     );
   },
   style: ElevatedButton.styleFrom(
