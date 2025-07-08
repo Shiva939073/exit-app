@@ -32,7 +32,10 @@ class _SignupPageState extends State<SignupPage> {
         'role': '',
       });
 
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (_) => HomePage()),
+);
     } catch (e) {
       print('Signup error: \$e');
     }
