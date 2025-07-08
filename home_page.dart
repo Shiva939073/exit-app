@@ -1,4 +1,4 @@
-
+import 'ai_interview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -46,6 +46,21 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
             Text("XP: \$xp", style: TextStyle(color: Colors.greenAccent, fontSize: 18)),
             Text("Level: \$level", style: TextStyle(color: Colors.blueAccent, fontSize: 18)),
+            SizedBox(height: 20),
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AIInterviewPage()),
+    );
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.deepPurple,
+    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+  ),
+  child: Text("Start AI Interview", style: TextStyle(fontSize: 18)),
+),
+
             ElevatedButton(
     onPressed: () async {
       final uid = FirebaseAuth.instance.currentUser?.uid;
