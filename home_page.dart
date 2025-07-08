@@ -46,6 +46,24 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10),
             Text("XP: \$xp", style: TextStyle(color: Colors.greenAccent, fontSize: 18)),
             Text("Level: \$level", style: TextStyle(color: Colors.blueAccent, fontSize: 18)),
+            ElevatedButton(
+    onPressed: () async {
+      final uid = FirebaseAuth.instance.currentUser?.uid;
+      if (uid != null) {
+        final userRef = FirebaseFirestore.instance.collection('users').doc(uid);
+        await userRef.update({
+          'xp': FieldValue.increment(10),
+        });
+        final updatedDoc = await userRef.get();
+        setState(() {
+          xp = updatedDoc['xp'] ?? xp;
+        });
+      }
+    },
+    child: Text("+10 XP"),
+  ),
+],
+
           ],
         ),
       ),
