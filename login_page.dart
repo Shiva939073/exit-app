@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'home_page.dart';
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -18,7 +20,10 @@ class _LoginPageState extends State<LoginPage> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (_) => HomePage()),
+);
     } catch (e) {
       print('Login error: \$e');
     }
