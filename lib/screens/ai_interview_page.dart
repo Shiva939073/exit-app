@@ -46,11 +46,11 @@ class AIInterviewPage extends StatelessWidget {
             Text("Choose Your Role",
               style: TextStyle(color: Colors.white, fontSize: 20)),
             SizedBox(height: 10),
-            Text(
-  'Interview for: $role',
+
+            Text(getFirstQuestion(role),
   style: TextStyle(color: Colors.white, fontSize: 24),
 ),
-SizedBox(height: 16),
+
 
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
