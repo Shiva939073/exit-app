@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AIInterviewPage extends StatelessWidget {
-  const AIInterviewPage({super.key});
+  final String role;
+
+  const AIInterviewPage({required this.role, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,12 @@ class AIInterviewPage extends StatelessWidget {
             Text("Choose Your Role",
               style: TextStyle(color: Colors.white, fontSize: 20)),
             SizedBox(height: 10),
+            Text(
+  'Interview for: $role',
+  style: TextStyle(color: Colors.white, fontSize: 24),
+),
+SizedBox(height: 16),
+
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 filled: true,
