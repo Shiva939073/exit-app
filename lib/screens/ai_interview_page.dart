@@ -4,6 +4,31 @@ class AIInterviewPage extends StatelessWidget {
   final String role;
 
   const AIInterviewPage({required this.role, super.key});
+  String getFirstQuestion(String role) {
+  switch (role) {
+    case 'Filmmaker':
+      return '🎬 What inspired you to become a filmmaker?';
+    case 'Doctor':
+      return '🩺 Why did you choose medicine as a career?';
+    case 'Freelancer':
+      return '💼 How do you find your first clients?';
+    case 'Software Developer':
+      return '💻 What languages and frameworks do you prefer?';
+    case 'Engineer':
+      return '🛠 Tell me about your most exciting project.';
+    case 'Fashion Designer':
+      return '👗 How do you approach designing a new collection?';
+    case 'Teacher':
+      return '📚 What teaching style do you believe in?';
+    case 'Actor':
+      return '🎭 Which role challenged you the most?';
+    case 'Chef':
+      return '🍲 What’s your signature dish and why?';
+    default:
+      return '🧠 Tell me about yourself.';
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {
