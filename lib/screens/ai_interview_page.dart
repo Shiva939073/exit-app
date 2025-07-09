@@ -88,9 +88,24 @@ class AIInterviewPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 ),
                 onPressed: () {
-                  // Logic to launch AI interview
-                },
-                child: Text("Start Interview", style: TextStyle(fontSize: 18)),
+  final question = getFirstQuestion(role);
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      backgroundColor: Color(0xFF1D1E33),
+      title: Text("AI Interview", style: TextStyle(color: Colors.white)),
+      content: Text(question, style: TextStyle(color: Colors.white)),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text("OK", style: TextStyle(color: Colors.purple)),
+        ),
+      ],
+    ),
+  );
+},
+
+
               ),
             )
           ],
