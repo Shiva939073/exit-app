@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'ai_video_interviewer_page.dart';
+
 
 class RoleBasedInterviewPage extends StatefulWidget {
   const RoleBasedInterviewPage({super.key});
@@ -106,4 +108,27 @@ class _RoleBasedInterviewPageState extends State<RoleBasedInterviewPage> {
       ),
     );
   }
+  const SizedBox(height: 30),
+
+ElevatedButton(
+  onPressed: () {
+    if (selectedRole.isNotEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => AIVideoInterviewerPage(selectedRole: selectedRole),
+        ),
+      );
+    }
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.deepPurple,
+    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+  ),
+  child: const Text(
+    'Start AI Video Interview',
+    style: TextStyle(color: Colors.white, fontSize: 18),
+  ),
+),
+
 }
