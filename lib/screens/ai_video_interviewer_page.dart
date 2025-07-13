@@ -16,11 +16,28 @@ class _AIVideoInterviewerPageState extends State<AIVideoInterviewerPage> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-      'https://your-cloud-link.com/ai_interviewer_1.mp4',
-    )..initialize().then((_) {
-        setState(() {});
-      });
+    String getVideoUrl(String role) {
+  final videos = {
+    'filmmaker': 'https://your-cloud-link.com/filmmaker_ai.mp4',
+    'developer': 'https://your-cloud-link.com/developer_ai.mp4',
+    'freelancer': 'https://your-cloud-link.com/freelancer_ai.mp4',
+    'chef': 'https://your-cloud-link.com/chef_ai.mp4',
+    'teacher': 'https://your-cloud-link.com/teacher_ai.mp4',
+    'default': 'https://your-cloud-link.com/default_ai.mp4',
+  };
+  return videos[role.toLowerCase()] ?? videos['default']!;
+}
+
+@override
+void initState() {
+  super.initState();
+  _controller = VideoPlayerController.network(
+    getVideoUrl(widget.selectedRole),
+  )..initialize().then((_) {
+    setState(() {});
+  });
+}
+
   }
 
   @override
