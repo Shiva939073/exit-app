@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class AIVideoInterviewerPage extends StatefulWidget {
-  const AIVideoInterviewerPage({super.key});
+  final String selectedRole;
+  const AIVideoInterviewerPage({super.key, required this.selectedRole});
+
 
   @override
   State<AIVideoInterviewerPage> createState() => _AIVideoInterviewerPageState();
